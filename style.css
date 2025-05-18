@@ -1,0 +1,162 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e1e2f;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+#quiz-container {
+    background: #2c2c4a;
+    padding: 30px 40px;
+    border-radius: 10px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.7);
+    position: relative;
+    z-index: 10;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    background: #45456b;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+    box-shadow: 0 0 8px transparent;
+}
+
+.option:hover {
+    background: #5a5ad4;
+    box-shadow: 0 0 12px #8a8aff;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #5a5ad4;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 0 12px #8a8aff;
+}
+
+button:hover {
+    background: #7a7af7;
+}
+
+.progress-bar-container {
+    margin-top: 20px;
+    background: #3b3b67;
+    height: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressBar {
+    background: #7878f5;
+    height: 100%;
+    width: 0%;
+    transition: width 0.4s ease;
+    border-radius: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 8px green;
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 20px limegreen;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 8px green;
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    50% {
+        transform: translateX(8px);
+    }
+
+    75% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.floating-bg {
+    position: fixed;
+    top: -150px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #4a4aff66, transparent 70%);
+    border-radius: 50%;
+    filter: blur(90px);
+    animation: floatBG 1s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes floatBG {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(30px, 40px);
+    }
+}
+
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 100vw;
+    height: 100vh;
+}
